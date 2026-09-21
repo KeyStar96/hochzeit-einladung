@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standesamtliche Hochzeit | Anastasia & Dennis</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-main: #2b2b2b;
+            --text-muted: #666666;
+            --gold-accent: #c5a059;
+            --gold-light: #e8d5b5;
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Container & Grid Background */
+        .wrapper {
+            max-width: 650px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            border-radius: 12px;
+            padding: 50px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        /* Gold Decorative Border */
+        .wrapper::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            border: 1px solid var(--gold-light);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        .sub-header {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        h1 span {
+            display: block;
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--gold-accent);
+            margin: 5px 0;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold-accent);
+            margin: 25px auto;
+        }
+
+        p.intro {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Countdown Container */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .count-box {
+            background: #faf8f5;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 12px 15px;
+            border-radius: 6px;
+            min-width: 75px;
+        }
+
+        .count-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .count-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        /* Details Card */
+        .details-grid {
+            margin: 35px 0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: #faf8f5;
+            padding: 18px 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold-accent);
+        }
+
+        .detail-icon {
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        .detail-title {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 3px;
+        }
+
+        .detail-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--gold-accent);
+            color: #ffffff;
+            border: 1px solid var(--gold-accent);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #b38e48;
+            border-color: #b38e48;
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wrapper {
+                padding: 35px 20px;
+            }
+            h1 {
+                font-size: 2.3rem;
+            }
+            .countdown {
+                gap: 8px;
+            }
+            .count-box {
+                min-width: 60px;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="sub-header">Wir sagen Ja!</div>
+        
+        <h1>Anastasia <span>&</span> Dennis</h1>
+        
+        <div class="divider"></div>
+
+        <p class="intro">
+            Zu unserer standesamtlichen Trauung möchten wir euch ganz herzlich einladen. Wir freuen uns darauf, diesen besonderen Moment mit euch zu teilen.
+        </p>
+
+        <!-- Countdown -->
+        <div class="countdown" id="countdown">
+            <div class="count-box">
+                <div class="count-number" id="days">00</div>
+                <div class="count-label">Tage</div>
+            </div>
+            <div class="count-box">
+                <div class="count-number" id="hours">00</div>
+                <div class="count-label">Std</div>
+            </div>
+            <div class="count-box">
+                <div class="count-number" id="minutes">00</div>
+                <div class="count-label">Min</div>
+            </div>
+            <div class="count-box">
+                <div class="count-number" id="seconds">00</div>
+                <div class="count-label">Sek</div>
+            </div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="details-grid">
+            <div class="detail-item">
+                <div class="detail-icon">📅</div>
+                <div>
+                    <div class="detail-title">Datum & Uhrzeit</div>
+                    <div class="detail-desc">Freitag, 18. Dezember 2026 um 11:40 Uhr</div>
+                </div>
+            </div>
+
+            <div class="detail-item">
+                <div class="detail-icon">🏛️</div>
+                <div>
+                    <div class="detail-title">Location</div>
+                    <div class="detail-desc">Altes Rathaus Hannover<br>Köbelingerstraße 4, 30159 Hannover</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="btn-group">
+            <a href="https://www.google.com/maps/search/?api=1&query=Altes+Rathaus+Hannover+Köbelingerstraße+4" class="btn btn-primary" target="_blank">
+                Route auf Google Maps öffnen
+            </a>
+        </div>
+    </div>
+
+    <!-- Countdown Logic -->
+    <script>
+        const weddingDate = new Date("December 18, 2026 11:40:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<div style='color: var(--gold-accent); font-size: 1.2rem;'>Heute ist unser großer Tag!</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
